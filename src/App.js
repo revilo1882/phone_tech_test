@@ -51,24 +51,34 @@ class App extends Component {
 					<br />
 					<span
 						className='gold'
-						onClick={() => this.setState({ colour: 'Gold', image: Gold })}>
+						onClick={() => this.setState({ colour: 'Gold', image: Gold })}
+						style={this.state.colour === 'Gold' ? { border:'solid blue'} : {border:'none'}}
+					>
 					</span>
 					<span
 						className='silver'
-						onClick={() => this.setState({ colour: 'Silver', image: Silver })}>
+						onClick={() => this.setState({ colour: 'Silver', image: Silver })}
+						style={this.state.colour === 'Silver' ? { border:'solid blue'} : {border:'none'}}
+					>
 					</span>
 					<span
 						className='spaceGrey'
-						onClick={() => this.setState({ colour: 'Space Grey', image: SpaceGrey })}>
+						onClick={() => this.setState({ colour: 'Space Grey', image: SpaceGrey })}
+						style={this.state.colour === 'Space Grey' ? { border:'solid blue'} : {border:'none'}}
+					>
 					</span>
 					<span
 						className='size'
-						onClick={() => this.setState({ capacity: '256GB' })}>
+						onClick={() => this.setState({ capacity: '256GB' })}
+						style={this.state.capacity === '256GB' ? { border:'solid blue'} : {border:'none'}}
+					>
             256
 					</span>
 					<span
 						className='size'
-						onClick={() => this.setState({ capacity: '64GB' })}>
+						onClick={() => this.setState({ capacity: '64GB' })}
+						style={this.state.capacity === '64GB' ? { border:'solid blue'} : {border:'none'}}
+					>
             64
 					</span>
 				</div>
