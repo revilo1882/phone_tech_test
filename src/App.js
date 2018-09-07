@@ -15,6 +15,19 @@ class App extends Component {
 		};
 	}
 
+	stars(){
+		var stars = [];
+		var i;
+		var j;
+		for (i=0; i<= data[0].rating; i++) {
+			stars.push(<span style={{color: 'gold'}}>&#9733;</span>);
+		}
+		for (j=stars.length; stars.length < 5; j++) {
+			stars.push(<span>&#9733;</span>);
+		}
+		return stars;
+	}
+
 
 	render() {
 		const phones = data[0].deviceSummary;
@@ -33,6 +46,7 @@ class App extends Component {
 				</div>
 				<div>
 					<h1>{data[0].groupName}</h1>
+					<h3>{this.stars()}</h3>
 					<p>{phones[0].displayDescription}</p>
 				</div>
 				<div>
@@ -92,9 +106,8 @@ class App extends Component {
 						<span className='price'>
               £
 							{phones.map((phone) => {
-								if(this.state.colour === phone.colourName && this.state.capacity === phone.memory) {
-									return phone.priceInfo.hardwarePrice.oneOffPrice.gross;
-								}
+								return this.state.colour === phone.colourName && this.state.capacity === phone.memory ?
+									phone.priceInfo.hardwarePrice.oneOffPrice.gross : null
 							})}
 						</span> upfront cost</span>
 					<span className='line'>|</span>
@@ -103,9 +116,8 @@ class App extends Component {
 						<span className='price'>
               £
 							{phones.map((phone) => {
-								if(this.state.colour === phone.colourName && this.state.capacity === phone.memory) {
-									return phone.priceInfo.bundlePrice.monthlyPrice.gross;
-								}
+								return this.state.colour === phone.colourName && this.state.capacity === phone.memory ?
+									phone.priceInfo.bundlePrice.monthlyPrice.gross : null
 							})}
 						</span> a month</span>
 				</div>
