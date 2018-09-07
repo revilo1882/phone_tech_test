@@ -20,12 +20,16 @@ class App extends Component {
 		var i;
 		var j;
 		for (i=0; i<= data[0].rating; i++) {
-			stars.push(<span style={{color: 'gold'}}>&#9733;</span>);
+			stars.push(<span key={i} style={{color: 'gold'}}>&#9733;</span>);
 		}
 		for (j=stars.length; stars.length < 5; j++) {
-			stars.push(<span>&#9733;</span>);
+			stars.push(<span key={j}>&#9733;</span>);
 		}
 		return stars;
+	}
+
+	checkModel(phone) {
+		return (this.state.colour === phone.colourName && this.state.capacity === phone.memory);
 	}
 
 
@@ -49,8 +53,7 @@ class App extends Component {
 					<h3>{this.starRating()}</h3>
 					<p>
 						{phones.map((phone) => {
-							return this.state.colour === phone.colourName && this.state.capacity === phone.memory ?
-								phone.displayDescription : null;
+							return this.checkModel(phone) ? phone.displayDescription : null;
 						})}
 					</p>
 				</div>
@@ -107,13 +110,12 @@ class App extends Component {
 				<br />
 				<br />
 				<div className='cost'>
-					<span className='upfront'>;;
+					<span className='upfront'>
             from {' '}
 						<span className='price'>
               £
 							{phones.map((phone) => {
-								return this.state.colour === phone.colourName && this.state.capacity === phone.memory ?
-									phone.priceInfo.hardwarePrice.oneOffPrice.gross : null;
+								return this.checkModel(phone) ? phone.priceInfo.hardwarePrice.oneOffPrice.gross : null;
 							})}
 						</span> upfront cost</span>
 					<span className='line'>|</span>
@@ -122,8 +124,7 @@ class App extends Component {
 						<span className='price'>
               £
 							{phones.map((phone) => {
-								return this.state.colour === phone.colourName && this.state.capacity === phone.memory ?
-									phone.priceInfo.bundlePrice.monthlyPrice.gross : null;
+								return this.checkModel(phone) ? phone.priceInfo.bundlePrice.monthlyPrice.gross : null;
 							})}
 						</span> a month</span>
 				</div>
