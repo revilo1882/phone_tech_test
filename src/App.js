@@ -15,7 +15,7 @@ class App extends Component {
 		};
 	}
 
-	stars(){
+	starRating(){
 		var stars = [];
 		var i;
 		var j;
@@ -40,14 +40,19 @@ class App extends Component {
 						style={{
 							float: 'left',
 							width: '20%',
-							marginRight: '180px'
+							marginRight: '5%'
 						}}
 					/>
 				</div>
 				<div>
 					<h1>{data[0].groupName}</h1>
-					<h3>{this.stars()}</h3>
-					<p>{phones[0].displayDescription}</p>
+					<h3>{this.starRating()}</h3>
+					<p>
+						{phones.map((phone) => {
+							return this.state.colour === phone.colourName && this.state.capacity === phone.memory ?
+								phone.displayDescription : null;
+						})}
+					</p>
 				</div>
 				<div>
 					<div className='colour'>
@@ -62,6 +67,7 @@ class App extends Component {
 							{this.state.capacity}
 						</div>
 					</div>
+					<br />
 					<br />
 					<span
 						className='gold'
@@ -101,13 +107,13 @@ class App extends Component {
 				<br />
 				<br />
 				<div className='cost'>
-					<span className='upfront'>
+					<span className='upfront'>;;
             from {' '}
 						<span className='price'>
               £
 							{phones.map((phone) => {
 								return this.state.colour === phone.colourName && this.state.capacity === phone.memory ?
-									phone.priceInfo.hardwarePrice.oneOffPrice.gross : null
+									phone.priceInfo.hardwarePrice.oneOffPrice.gross : null;
 							})}
 						</span> upfront cost</span>
 					<span className='line'>|</span>
@@ -117,7 +123,7 @@ class App extends Component {
               £
 							{phones.map((phone) => {
 								return this.state.colour === phone.colourName && this.state.capacity === phone.memory ?
-									phone.priceInfo.bundlePrice.monthlyPrice.gross : null
+									phone.priceInfo.bundlePrice.monthlyPrice.gross : null;
 							})}
 						</span> a month</span>
 				</div>
