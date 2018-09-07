@@ -9,8 +9,8 @@ class App extends Component {
 		super();
 
 		this.state = {
-			colour: 'Gold',
-			capacity: '64GB',
+			colour: ' Gold',
+			capacity: ' 64GB',
 			image: Gold
 		};
 	}
@@ -24,7 +24,10 @@ class App extends Component {
 						alt=''
 						style={{
 							float: 'left',
-							width: '25%'}} />
+							width: '20%',
+							marginRight: '180px'
+						}}
+					/>
 				</div>
 				<div>
 					<h1>{data[0].groupName}</h1>
@@ -46,24 +49,24 @@ class App extends Component {
 					<br />
 					<span
 						className='gold'
-						onClick={() => this.setState({ colour: 'Gold', image: Gold })}>
+						onClick={() => this.setState({ colour: ' Gold', image: Gold })}>
 					</span>
 					<span
 						className='silver'
-						onClick={() => this.setState({ colour: 'Silver', image: Silver })}>
+						onClick={() => this.setState({ colour: ' Silver', image: Silver })}>
 					</span>
 					<span
 						className='spaceGrey'
-						onClick={() => this.setState({ colour: 'Space Grey', image: SpaceGrey })}>
+						onClick={() => this.setState({ colour: ' Space Grey', image: SpaceGrey })}>
 					</span>
 					<span
 						className='size'
-						onClick={() => this.setState({ capacity: '256GB' })}>
+						onClick={() => this.setState({ capacity: ' 256GB' })}>
             256
 					</span>
 					<span
 						className='size'
-						onClick={() => this.setState({ capacity: '64GB' })}>
+						onClick={() => this.setState({ capacity: ' 64GB' })}>
             64
 					</span>
 				</div>
@@ -72,9 +75,9 @@ class App extends Component {
 				<br />
 				<br />
 				<div className='cost'>
-					<span>from £1149 upfront cost</span>
-					{' | '}
-					<span>when you pay £43.20 a month</span>
+					<span className='upfront'>from <span className='price'>£1149</span> upfront cost</span>
+					<span className='line'>|</span>
+					<span className='monthly'>when you pay <span className='price'>£43.20</span> a month</span>
 				</div>
 			</div>
 		);
