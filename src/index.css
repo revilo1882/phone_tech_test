@@ -1,0 +1,57 @@
+body {
+  text-align: center;
+  padding: 5%;
+}
+
+.selected {
+  font-weight: bold;
+  display: inline;
+}
+
+.colour {
+  float: left;
+}
+
+.capacity {
+  float: right;
+}
+.gold {
+  background-color: gold;
+  border-radius: 5px;
+  margin: 5px;
+  float: left;
+  height: 45px;
+  width: 45px;
+  cursor: pointer;
+}
+
+.silver {
+  background-color: silver;
+  border-radius: 5px;
+  margin: 5px;
+  float: left;
+  height: 45px;
+  width: 45px;
+  cursor: pointer;
+}
+
+.spaceGrey {
+  background-color: black;
+  border-radius: 5px;
+  margin: 5px;
+  float: left;
+  height: 45px;
+  width: 45px;
+  cursor: pointer;
+}
+
+.size {
+  background-color: lightgrey;
+  border-radius: 5px;
+  margin: 5px;
+  float: right;
+  height: 45px;
+  width: 45px;
+  padding: 12px 0;
+  cursor: pointer;
+}
