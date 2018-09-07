@@ -9,13 +9,15 @@ class App extends Component {
 		super();
 
 		this.state = {
-			colour: ' Gold',
-			capacity: ' 64GB',
+			colour: 'Gold',
+			capacity: '64GB',
 			image: Gold
 		};
 	}
 
+
 	render() {
+		const phones = data[0].deviceSummary;
 		return (
 			<div>
 				<div>
@@ -31,17 +33,17 @@ class App extends Component {
 				</div>
 				<div>
 					<h1>{data[0].groupName}</h1>
-					<p>{data[0].deviceSummary[0].displayDescription}</p>
+					<p>{phones[0].displayDescription}</p>
 				</div>
 				<div>
 					<div className='colour'>
-            Colour:
+            Colour: {' '}
 						<div className='selected'>
 							{this.state.colour}
 						</div>
 					</div>
 					<div className='capacity'>
-            Capacity:
+            Capacity: {' '}
 						<div className='selected'>
 							{this.state.capacity}
 						</div>
@@ -49,24 +51,24 @@ class App extends Component {
 					<br />
 					<span
 						className='gold'
-						onClick={() => this.setState({ colour: ' Gold', image: Gold })}>
+						onClick={() => this.setState({ colour: 'Gold', image: Gold })}>
 					</span>
 					<span
 						className='silver'
-						onClick={() => this.setState({ colour: ' Silver', image: Silver })}>
+						onClick={() => this.setState({ colour: 'Silver', image: Silver })}>
 					</span>
 					<span
 						className='spaceGrey'
-						onClick={() => this.setState({ colour: ' Space Grey', image: SpaceGrey })}>
+						onClick={() => this.setState({ colour: 'Space Grey', image: SpaceGrey })}>
 					</span>
 					<span
 						className='size'
-						onClick={() => this.setState({ capacity: ' 256GB' })}>
+						onClick={() => this.setState({ capacity: '256GB' })}>
             256
 					</span>
 					<span
 						className='size'
-						onClick={() => this.setState({ capacity: ' 64GB' })}>
+						onClick={() => this.setState({ capacity: '64GB' })}>
             64
 					</span>
 				</div>
@@ -75,9 +77,27 @@ class App extends Component {
 				<br />
 				<br />
 				<div className='cost'>
-					<span className='upfront'>from <span className='price'>£1149</span> upfront cost</span>
+					<span className='upfront'>
+            from {' '}
+						<span className='price'>
+              £
+							{phones.map((phone) => {
+								if(this.state.colour === phone.colourName && this.state.capacity === phone.memory) {
+									return phone.priceInfo.hardwarePrice.oneOffPrice.gross;
+								}
+							})}
+						</span> upfront cost</span>
 					<span className='line'>|</span>
-					<span className='monthly'>when you pay <span className='price'>£43.20</span> a month</span>
+					<span className='monthly'>
+            when you pay {' '}
+						<span className='price'>
+              £
+							{phones.map((phone) => {
+								if(this.state.colour === phone.colourName && this.state.capacity === phone.memory) {
+									return phone.priceInfo.bundlePrice.monthlyPrice.gross;
+								}
+							})}
+						</span> a month</span>
 				</div>
 			</div>
 		);

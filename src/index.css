@@ -83,6 +83,7 @@ body {
 
 .line {
   text-align: center;
+  font-weight: lighter;
   margin: 10px;
   font-size: 80px;
 }
