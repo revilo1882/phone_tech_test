@@ -37,27 +37,20 @@ class App extends Component {
 		const phones = data[0].deviceSummary;
 		return (
 			<div>
-				<div>
-					<img
-						src={this.state.image}
-						alt=''
-						style={{
-							float: 'left',
-							width: '20%',
-							marginRight: '5%'
-						}}
-					/>
-				</div>
-				<div>
-					<h1>{data[0].groupName}</h1>
-					<h3>{this.starRating()}</h3>
-					<p>
+				<img className='phoneImage'
+					src={this.state.image}
+				/>
+				<div className='information'>
+					<h1 className='model'>{data[0].groupName}</h1>
+					<h3 >{this.starRating()}</h3>
+					<h4 className='description'>
 						{phones.map((phone) => {
 							return this.checkModel(phone) ? phone.displayDescription : null;
 						})}
-					</p>
+					</h4>
 				</div>
-				<div>
+				<br />
+				<div className='selection'>
 					<div className='colour'>
             Colour: {' '}
 						<div className='selected'>
@@ -72,39 +65,41 @@ class App extends Component {
 					</div>
 					<br />
 					<br />
-					<span
-						className='gold'
-						onClick={() => this.setState({ colour: 'Gold', image: Gold })}
-						style={this.state.colour === 'Gold' ? { border:'solid blue'} : {border:'none'}}
-					>
-					</span>
-					<span
-						className='silver'
-						onClick={() => this.setState({ colour: 'Silver', image: Silver })}
-						style={this.state.colour === 'Silver' ? { border:'solid blue'} : {border:'none'}}
-					>
-					</span>
-					<span
-						className='spaceGrey'
-						onClick={() => this.setState({ colour: 'Space Grey', image: SpaceGrey })}
-						style={this.state.colour === 'Space Grey' ? { border:'solid blue'} : {border:'none'}}
-					>
-					</span>
-					<span
-						className='size'
-						onClick={() => this.setState({ capacity: '256GB' })}
-						style={this.state.capacity === '256GB' ? { border:'solid blue'} : {border:'none'}}
-					>
-            256
-					</span>
-					<span
-						className='size'
-						onClick={() => this.setState({ capacity: '64GB' })}
-						style={this.state.capacity === '64GB' ? { border:'solid blue'} : {border:'none'}}
-					>
-            64
-					</span>
+					<div>
+						<div
+							className='gold'
+							onClick={() => this.setState({ colour: 'Gold', image: Gold })}
+							style={this.state.colour === 'Gold' ? { boxShadow:'0 0 0 2pt blue'} : null}
+						>
+						</div>
+						<div
+							className='silver'
+							onClick={() => this.setState({ colour: 'Silver', image: Silver })}
+							style={this.state.colour === 'Silver' ? { boxShadow:'0 0 0 2pt blue'} : null}
+						>
+						</div>
+						<div
+							className='spaceGrey'
+							onClick={() => this.setState({ colour: 'Space Grey', image: SpaceGrey })}
+							style={this.state.colour === 'Space Grey' ? { boxShadow:'0 0 0 2pt blue'} : null}
+						>
+						</div>
+						<div
+							className='sixtyFour'
+							onClick={() => this.setState({ capacity: '256GB' })}
+							style={this.state.capacity === '256GB' ? { boxShadow:'0 0 0 2pt blue'} : null}
+						>64
+						</div>
+						<div
+							className='twoFiveSix'
+							onClick={() => this.setState({ capacity: '64GB' })}
+							style={this.state.capacity === '64GB' ? { boxShadow:'0 0 0 2pt blue'} : null}
+						>256
+						</div>
+					</div>
 				</div>
+				<br />
+				<br />
 				<br />
 				<br />
 				<br />

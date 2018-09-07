@@ -3,87 +3,109 @@ body {
   padding: 5%;
 }
 
+.phoneImage {
+  float: left;
+  width: 26%;
+  margin-right: 5%;
+}
+
+.information {
+  padding: 3px 30px 3px 400px;
+  font-weight: lighter;
+}
+
+.model, .description {
+  font-weight: lighter;
+}
+
+.selection {
+  padding: 3px 30px 3px 400px;
+  vertical-align: top;
+}
+
 .selected {
   font-weight: bold;
   display: inline;
 }
 
 .colour {
-  float: left;
+  display: inline-block;
+  width: 20%;
 }
 
 .capacity {
-  float: right;
+  display: inline-block;
+  margin-left: 30%;
 }
-.gold {
-  background-color: gold;
+
+.gold, .silver, .spaceGrey{
+  vertical-align: top;
   border-radius: 5px;
-  margin: 5px;
-  float: left;
+  border: solid lightgrey;
+  display: inline-block;
   height: 45px;
   width: 45px;
   cursor: pointer;
+}
+
+.gold {
+  background-color: gold;
+
 }
 
 .silver {
   background-color: silver;
-  border-radius: 5px;
-  margin: 5px;
-  float: left;
-  height: 45px;
-  width: 45px;
-  cursor: pointer;
+  margin-left: 5px;
 }
 
 .spaceGrey {
   background-color: black;
-  border-radius: 5px;
-  margin: 5px;
-  float: left;
-  height: 45px;
-  width: 45px;
-  cursor: pointer;
+  margin-left: 5px;
 }
 
-.size {
-  background-color: lightgrey;
-  text-align: center;
+.sixtyFour, .twoFiveSix {
+  background-color: #F5F5F5;
+  border: solid lightgrey;
+  vertical-align: top;
   border-radius: 5px;
-  margin: 5px;
-  float: right;
+  display: inline-block;
   height: 45px;
   width: 45px;
+  text-align: center;
   padding: 12px 0;
   cursor: pointer;
 }
 
+.sixtyFour {
+  margin-left: 29%;
+}
+
+.twoFiveSix {
+  margin-left: 5px;
+}
+
 .cost {
-  background-color: lightgrey;
-  padding: 10px;
+  background-color: #F5F5F5;
   float: right;
-  height: 140px;
-  width: 40%;
+  width: 65%;
 }
 
-.upfront {
-  text-align: left;
-  padding: 30px 0;
+.line {
+  display: inline-block;
+  font-weight: lighter;
+  font-size: 80px;
+  margin-left: 100px;
 }
 
-.monthly {
-  text-align: right;
-  padding: 30px 0;
+.upfront, .monthly {
+  margin-left: 20px;
+  vertical-align: text-bottom;
+  display: inline-block;
 }
 
 .price {
   color: red;
+  display: inline-block;
   font-weight: bold;
   font-size: 30px;
-}
-
-.line {
-  text-align: center;
-  font-weight: lighter;
-  margin: 10px;
-  font-size: 80px;
 }
