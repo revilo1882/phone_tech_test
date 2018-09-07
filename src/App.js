@@ -3,7 +3,7 @@ import data from './data/phones.json';
 
 
 class App extends Component {
-  constructor() {
+	constructor() {
 		super();
 
 		this.state = {
@@ -18,14 +18,41 @@ class App extends Component {
 			<div>
 				<h1>{data[0].groupName}</h1>
 				<p>{data[0].deviceSummary[0].displayDescription}</p>
-				<div className='colour'>Colour:<div className='selected'>{this.state.colour}</div></div>
-				<div className='capacity'>Capacity:<div className='selected'>{this.state.capacity}</div></div>
+				<div className='colour'>
+          Colour:
+					<div className='selected'>
+						{this.state.colour}
+					</div>
+				</div>
+				<div className='capacity'>
+          Capacity:
+					<div className='selected'>
+						{this.state.capacity}
+					</div>
+				</div>
 				<br />
-				<span className='gold'></span>
-				<span className='silver'></span>
-				<span className='spaceGrey'></span>
-				<span className='size'>256</span>
-				<span className='size'>64</span>
+				<span
+					className='gold'
+					onClick={() => this.setState({ colour: 'Gold' })}>
+				</span>
+				<span
+					className='silver'
+					onClick={() => this.setState({ colour: 'Silver' })}>
+				</span>
+				<span
+					className='spaceGrey'
+					onClick={() => this.setState({ colour: 'Space Grey' })}>
+				</span>
+				<span
+					className='size'
+					onClick={() => this.setState({ capacity: '256GB' })}>
+          256
+				</span>
+				<span
+					className='size' 
+					onClick={() => this.setState({ capacity: '64GB' })}>
+          64
+				</span>
 			</div>
 		);
 	}
