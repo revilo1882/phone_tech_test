@@ -29,6 +29,7 @@ body {
 .selection {
   padding: 3px 30px 3px 400px;
   vertical-align: top;
+  margin-top: 20px;
 }
 
 .selected {
@@ -48,6 +49,7 @@ body {
 
 .gold, .silver, .spaceGrey{
   vertical-align: top;
+  margin-top: 20px;
   border-radius: 10px;
   border: solid lightgrey;
   display: inline-block;
@@ -75,6 +77,7 @@ body {
   background-color: #F5F5F5;
   border: solid lightgrey;
   vertical-align: top;
+  margin-top: 20px;
   border-radius: 10px;
   display: inline-block;
   height: 45px;
@@ -96,7 +99,8 @@ body {
   background-color: #F5F5F5;
   float: right;
   width: 600px;
-  margin-right: 50px;;
+  margin-right: 50px;
+  margin-top: 100px;
 }
 
 .line {

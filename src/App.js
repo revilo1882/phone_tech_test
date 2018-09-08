@@ -23,7 +23,7 @@ class App extends Component {
 			stars.push(<span key={i} style={{color: 'gold'}}>&#9733;</span>);
 		}
 		for (j=stars.length; stars.length < 5; j++) {
-			stars.push(<span key={j}>&#9733;</span>);
+			stars.push(<span key={j} style={{color: 'grey'}}>&#9733;</span>);
 		}
 		return stars;
 	}
@@ -31,7 +31,6 @@ class App extends Component {
 	checkModel(phone) {
 		return (this.state.colour === phone.colourName && this.state.capacity === phone.memory);
 	}
-
 
 	render() {
 		const phones = data[0].deviceSummary;
@@ -45,11 +44,10 @@ class App extends Component {
 					<h3 >{this.starRating()}</h3>
 					<p className='description'>
 						{phones.map((phone) => {
-							return this.checkModel(phone) ? phone.displayDescription : null;
+							return this.checkModel(phone) && phone.displayDescription;
 						})}
 					</p>
 				</div>
-				<br />
 				<div className='selection'>
 					<div className='colour'>
             Colour: {' '}
@@ -63,8 +61,6 @@ class App extends Component {
 							{this.state.capacity}
 						</div>
 					</div>
-					<br />
-					<br />
 					<div>
 						<div
 							className='gold'
@@ -98,19 +94,13 @@ class App extends Component {
 						</div>
 					</div>
 				</div>
-				<br />
-				<br />
-				<br />
-				<br />
-				<br />
-				<br />
 				<div className='cost'>
 					<span className='upfront'>
             from {' '}
 						<span className='price'>
               £
 							{phones.map((phone) => {
-								return this.checkModel(phone) ? phone.priceInfo.hardwarePrice.oneOffPrice.gross : null;
+								return this.checkModel(phone) && phone.priceInfo.hardwarePrice.oneOffPrice.gross;
 							})}
 						</span> upfront cost</span>
 					<span className='line'>|</span>
@@ -119,7 +109,7 @@ class App extends Component {
 						<span className='price'>
               £
 							{phones.map((phone) => {
-								return this.checkModel(phone) ? phone.priceInfo.bundlePrice.monthlyPrice.gross : null;
+								return this.checkModel(phone) && phone.priceInfo.bundlePrice.monthlyPrice.gross;
 							})}
 						</span> a month</span>
 				</div>
