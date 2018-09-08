@@ -54,4 +54,19 @@ describe('App', () => {
 			expect(app.state().image).toEqual(SpaceGrey);
 		});
 	});
+
+	describe('changes the state back on click of the Gold div', () =>{
+		beforeEach(() => {
+			app.find('.spaceGrey').simulate('click');
+			app.find('.gold').simulate('click');
+		});
+
+		it('changes the colour state when `spaceGrey` is clicked', () => {
+			expect(app.state().colour).toEqual('Gold');
+		});
+
+		it('changes the image state when `spaceGrey` is clicked', () => {
+			expect(app.state().image).toEqual(Gold);
+		});
+	});
 });
