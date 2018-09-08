@@ -3,7 +3,6 @@ import data from './data/phones.json';
 import Gold from './images/Apple_iPhone_8_Gold-full-product-front.png';
 import Silver from './images/Apple_iPhone_8_Silver_WS2-full-product-front.png';
 import SpaceGrey from './images/Apple_iPhone_8_Space_Grey_WS2-full-product-front.png';
-import Header from './Header';
 
 class App extends Component {
 	constructor() {
@@ -16,6 +15,19 @@ class App extends Component {
 		};
 	}
 
+	starRating(){
+		var stars = [];
+		var i;
+		var j;
+		for (i=0; i<= data[0].rating; i++) {
+			stars.push(<span key={i} style={{color: 'gold'}}>&#9733;</span>);
+		}
+		for (j=stars.length; stars.length < 5; j++) {
+			stars.push(<span key={j} style={{color: 'grey'}}>&#9733;</span>);
+		}
+		return stars;
+	}
+
 	checkModel(phone) {
 		return (this.state.colour === phone.colourName && this.state.capacity === phone.memory);
 	}
@@ -23,13 +35,13 @@ class App extends Component {
 	render() {
 		const phones = data[0].deviceSummary;
 		return (
-			<div className='panel'>
+			<div>
 				<img className='phoneImage'
 					src={this.state.image}
-					alt=''
 				/>
 				<div className='information'>
-					<Header data={data[0]}/>
+					<h1 className='model'>{data[0].groupName}</h1>
+					<h3 >{this.starRating()}</h3>
 					<p className='description'>
 						{phones.map((phone) => {
 							return this.checkModel(phone) && phone.displayDescription;
