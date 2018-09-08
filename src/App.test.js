@@ -31,6 +31,22 @@ describe('App', () => {
 		expect(app.find('.gold').prop('style')).toEqual({boxShadow: '0 0 0 1pt SeaGreen'});
 	});
 
+  it('sets the style of the Silver element', () => {
+    expect(app.find('.silver').prop('style')).toEqual({boxShadow: 'none'});
+  });
+
+  it('sets the style of the Space Grey element', () => {
+    expect(app.find('.spaceGrey').prop('style')).toEqual({boxShadow: 'none'});
+  });
+
+  it('sets the style of the 64GB element', () => {
+    expect(app.find('.sixtyFour').prop('style')).toEqual({boxShadow: '0 0 0 1pt SeaGreen'});
+  });
+
+  it('sets the style of the 256GBelement', () => {
+    expect(app.find('.twoFiveSix').prop('style')).toEqual({boxShadow: 'none'});
+  });
+
 	describe('changes the state on click of the Silver div', () =>{
 		beforeEach(() => {
 			app.find('.silver').simulate('click');
