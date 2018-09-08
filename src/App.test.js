@@ -69,4 +69,19 @@ describe('App', () => {
 			expect(app.state().image).toEqual(Gold);
 		});
 	});
+
+	describe('changes the state on click of the twoFiveSix div', () =>{
+		beforeEach(() => {
+			app.find('.twoFiveSix').simulate('click');
+		});
+
+		it('changes the capacity state when `twoFiveSix` is clicked', () => {
+			expect(app.state().capacity).toEqual('256GB');
+		});
+
+		it('changes the capacity state back when `sixtyFour` is clicked', () => {
+			app.find('.sixtyFour').simulate('click');
+			expect(app.state().capacity).toEqual('64GB');
+		});
+	});
 });
