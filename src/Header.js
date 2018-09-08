@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
-import data from './data/phones.json';
 
-class Rating extends Component {
+class Header extends Component {
 
-	starRating(){
+	starRating(data){
 		var stars = [];
 		var i;
 		var j;
-		for (i=0; i<= data[0].rating; i++) {
+		for (i=0; i<= data.rating; i++) {
 			stars.push(<span key={i} style={{color: 'gold'}}>&#9733;</span>);
 		}
 		for (j=stars.length; stars.length < 5; j++) {
@@ -16,13 +15,17 @@ class Rating extends Component {
 		return stars;
 	}
 
+
 	render() {
+		const data = this.props.data;
+
 		return (
 			<div>
-				{this.starRating()}
+				<h1 className='model'>{data.groupName}</h1>
+				<h3>{this.starRating(data)}</h3>
 			</div>
 		);
 	}
 }
 
-export default Rating;
+export default Header;

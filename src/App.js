@@ -3,7 +3,7 @@ import data from './data/phones.json';
 import Gold from './images/Apple_iPhone_8_Gold-full-product-front.png';
 import Silver from './images/Apple_iPhone_8_Silver_WS2-full-product-front.png';
 import SpaceGrey from './images/Apple_iPhone_8_Space_Grey_WS2-full-product-front.png';
-import Rating from './Rating';
+import Header from './Header';
 
 class App extends Component {
 	constructor() {
@@ -26,10 +26,10 @@ class App extends Component {
 			<div className='panel'>
 				<img className='phoneImage'
 					src={this.state.image}
+					alt=''
 				/>
 				<div className='information'>
-					<h1 className='model'>{data[0].groupName}</h1>
-					<h3><Rating /></h3>
+					<Header data={data[0]}/>
 					<p className='description'>
 						{phones.map((phone) => {
 							return this.checkModel(phone) && phone.displayDescription;
