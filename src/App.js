@@ -38,6 +38,7 @@ class App extends Component {
 			<div>
 				<img className='phoneImage'
 					src={this.state.image}
+					alt=''
 				/>
 				<div className='information'>
 					<h1 className='model'>{data[0].groupName}</h1>
@@ -65,31 +66,31 @@ class App extends Component {
 						<div
 							className='gold'
 							onClick={() => this.setState({ colour: 'Gold', image: Gold })}
-							style={this.state.colour === 'Gold' ? { boxShadow:'0 0 0 1pt SeaGreen '} : { boxShadow:'none'} }
+							style={this.state.colour === 'Gold' ? { boxShadow:'0 0 0 1pt SeaGreen'} : { boxShadow:'none'} }
 						>
 						</div>
 						<div
 							className='silver'
 							onClick={() => this.setState({ colour: 'Silver', image: Silver })}
-							style={this.state.colour === 'Silver' ? { boxShadow:'0 0 0 1pt SeaGreen '} : { boxShadow:'none'}}
+							style={this.state.colour === 'Silver' ? { boxShadow:'0 0 0 1pt SeaGreen'} : { boxShadow:'none'}}
 						>
 						</div>
 						<div
 							className='spaceGrey'
 							onClick={() => this.setState({ colour: 'Space Grey', image: SpaceGrey })}
-							style={this.state.colour === 'Space Grey' ? { boxShadow:'0 0 0 1pt SeaGreen '} : { boxShadow:'none'}}
+							style={this.state.colour === 'Space Grey' ? { boxShadow:'0 0 0 1pt SeaGreen'} : { boxShadow:'none'}}
 						>
 						</div>
 						<div
 							className='sixtyFour'
 							onClick={() => this.setState({ capacity: '64GB' })}
-							style={this.state.capacity === '64GB' ? { boxShadow:'0 0 0 1pt SeaGreen '} : { boxShadow:'none'}}
+							style={this.state.capacity === '64GB' ? { boxShadow:'0 0 0 1pt SeaGreen'} : { boxShadow:'none'}}
 						>64
 						</div>
 						<div
 							className='twoFiveSix'
 							onClick={() => this.setState({ capacity: '256GB' })}
-							style={this.state.capacity === '256GB' ? { boxShadow:'0 0 0 1pt SeaGreen '} : { boxShadow:'none'}}
+							style={this.state.capacity === '256GB' ? { boxShadow:'0 0 0 1pt SeaGreen'} : { boxShadow:'none'}}
 						>256
 						</div>
 					</div>

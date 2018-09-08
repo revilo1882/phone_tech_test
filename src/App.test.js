@@ -27,6 +27,10 @@ describe('App', () => {
 		expect(app.state().image).toEqual(Gold);
 	});
 
+	it('sets the style of the Gold element', () => {
+		expect(app.find('.gold').prop('style')).toEqual({boxShadow: '0 0 0 1pt SeaGreen'});
+	});
+
 	describe('changes the state on click of the Silver div', () =>{
 		beforeEach(() => {
 			app.find('.silver').simulate('click');
