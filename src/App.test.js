@@ -103,6 +103,12 @@ describe('App', () => {
 			});
 		});
 
+		describe('changes the rendering to Silver', () => {
+			it('renders the corrcet colour', () => {
+				expect(app.find('.colour').text()).toEqual('Colour: Silver');
+			});
+		});
+
 		describe('clicking back on the Gold element', () =>{
 			beforeEach(() => {
 				app.find('.gold').simulate('click');
@@ -121,6 +127,12 @@ describe('App', () => {
 			describe('changes the image back to Gold', () => {
 				it('changes the image when `gold` is clicked', () => {
 					expect(app.find('.phoneImage').prop('src')).toEqual(Gold);
+				});
+			});
+
+			describe('changes the rendering to Gold', () => {
+				it('renders the corrcet colour', () => {
+					expect(app.find('.colour').text()).toEqual('Colour: Gold');
 				});
 			});
 		});
@@ -146,6 +158,12 @@ describe('App', () => {
 				expect(app.find('.phoneImage').prop('src')).toEqual(SpaceGrey);
 			});
 		});
+
+		describe('changes the rendering to SpaceGrey', () => {
+			it('renders the corrcet colour', () => {
+				expect(app.find('.colour').text()).toEqual('Colour: Space Grey');
+			});
+		});
 	});
 
 	describe('clicking on the twoFiveSix element', () =>{
@@ -159,6 +177,12 @@ describe('App', () => {
 			});
 		});
 
+		describe('changes the rendering to 256GB', () => {
+			it('renders the corrcet capacity', () => {
+				expect(app.find('.capacity').text()).toEqual('Capacity: 256GB');
+			});
+		});
+
 		describe('clicking on the sixtyFour element', () =>{
 			beforeEach(() => {
 				app.find('.sixtyFour').simulate('click');
@@ -167,6 +191,12 @@ describe('App', () => {
 			describe('changes the state when `64GB` is clicked', () => {
 				it('changes the capacity state back when `sixtyFour` is clicked', () => {
 					expect(app.state().capacity).toEqual('64GB');
+				});
+			});
+
+			describe('changes the rendering to 64GB', () => {
+				it('renders the corrcet capacity', () => {
+					expect(app.find('.capacity').text()).toEqual('Capacity: 64GB');
 				});
 			});
 		});
