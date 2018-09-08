@@ -97,7 +97,7 @@ class App extends Component {
 				</div>
 				<div className='cost'>
 					<span className='upfront'>
-            from {' '}
+            from {''}
 						<span className='price'>
               £
 							{phones.map((phone) => {
@@ -106,7 +106,7 @@ class App extends Component {
 						</span> upfront cost</span>
 					<span className='line'>|</span>
 					<span className='monthly'>
-            when you pay {' '}
+            when you pay {''}
 						<span className='price'>
               £
 							{phones.map((phone) => {

@@ -36,6 +36,14 @@ describe('App', () => {
 		it('renders the corrcet capacity', () => {
 			expect(app.find('.capacity').text()).toEqual('Capacity: 64GB');
 		});
+
+		it('renders the corrcet upfront cost', () => {
+			expect(app.find('.upfront').text()).toEqual('from £149 upfront cost');
+		});
+
+		it('renders the corrcet upfront cost', () => {
+			expect(app.find('.monthly').text()).toEqual('when you pay £43.20 a month');
+		});
 	});
 
 	describe('initial state', () => {
