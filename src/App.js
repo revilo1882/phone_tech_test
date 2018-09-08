@@ -36,18 +36,18 @@ class App extends Component {
 	render() {
 		const phones = data[0].deviceSummary;
 		return (
-			<div>
+			<div className='panel'>
 				<img className='phoneImage'
 					src={this.state.image}
 				/>
 				<div className='information'>
 					<h1 className='model'>{data[0].groupName}</h1>
 					<h3 >{this.starRating()}</h3>
-					<h4 className='description'>
+					<p className='description'>
 						{phones.map((phone) => {
 							return this.checkModel(phone) ? phone.displayDescription : null;
 						})}
-					</h4>
+					</p>
 				</div>
 				<br />
 				<div className='selection'>
@@ -69,31 +69,31 @@ class App extends Component {
 						<div
 							className='gold'
 							onClick={() => this.setState({ colour: 'Gold', image: Gold })}
-							style={this.state.colour === 'Gold' ? { boxShadow:'0 0 0 2pt blue'} : null}
+							style={this.state.colour === 'Gold' ? { boxShadow:'0 0 0 1pt SeaGreen '} : null}
 						>
 						</div>
 						<div
 							className='silver'
 							onClick={() => this.setState({ colour: 'Silver', image: Silver })}
-							style={this.state.colour === 'Silver' ? { boxShadow:'0 0 0 2pt blue'} : null}
+							style={this.state.colour === 'Silver' ? { boxShadow:'0 0 0 1pt SeaGreen '} : null}
 						>
 						</div>
 						<div
 							className='spaceGrey'
 							onClick={() => this.setState({ colour: 'Space Grey', image: SpaceGrey })}
-							style={this.state.colour === 'Space Grey' ? { boxShadow:'0 0 0 2pt blue'} : null}
+							style={this.state.colour === 'Space Grey' ? { boxShadow:'0 0 0 1pt SeaGreen '} : null}
 						>
 						</div>
 						<div
 							className='sixtyFour'
-							onClick={() => this.setState({ capacity: '256GB' })}
-							style={this.state.capacity === '256GB' ? { boxShadow:'0 0 0 2pt blue'} : null}
+							onClick={() => this.setState({ capacity: '64GB' })}
+							style={this.state.capacity === '64GB' ? { boxShadow:'0 0 0 1pt SeaGreen '} : null}
 						>64
 						</div>
 						<div
 							className='twoFiveSix'
-							onClick={() => this.setState({ capacity: '64GB' })}
-							style={this.state.capacity === '64GB' ? { boxShadow:'0 0 0 2pt blue'} : null}
+							onClick={() => this.setState({ capacity: '256GB' })}
+							style={this.state.capacity === '256GB' ? { boxShadow:'0 0 0 1pt SeaGreen '} : null}
 						>256
 						</div>
 					</div>
