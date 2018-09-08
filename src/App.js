@@ -51,13 +51,13 @@ class App extends Component {
 				</div>
 				<div className='selection'>
 					<div className='colour'>
-            Colour: {' '}
+            Colour: {''}
 						<div className='selected'>
 							{this.state.colour}
 						</div>
 					</div>
 					<div className='capacity'>
-            Capacity: {' '}
+            Capacity: {''}
 						<div className='selected'>
 							{this.state.capacity}
 						</div>

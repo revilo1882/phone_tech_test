@@ -4,6 +4,7 @@ import App from './App';
 import Gold from './images/Apple_iPhone_8_Gold-full-product-front.png';
 import Silver from './images/Apple_iPhone_8_Silver_WS2-full-product-front.png';
 import SpaceGrey from './images/Apple_iPhone_8_Space_Grey_WS2-full-product-front.png';
+import data from './data/phones.json';
 import Adapter from 'enzyme-adapter-react-16';
 
 configure({ adapter: new Adapter() });
@@ -14,6 +15,26 @@ describe('App', () => {
 	describe('initial rendering', () => {
 		it('renders the App title', () => {
 			expect(app.find('h1').text()).toEqual('Apple iPhone 8');
+		});
+
+		it('renders the description', () => {
+			expect(app.find('p').text()).toEqual('All-glass design, advanced cameras, wireless charging and a smart A11 Bionic chip. Intelligence never looked better.');
+		});
+
+		it('renders the stars', () => {
+			expect(app.find('h3').text()).toEqual('★★★★★');
+		});
+
+		it('renders the correct image', () => {
+			expect(app.find('.phoneImage').prop('src')).toEqual(Gold);
+		});
+
+		it('renders the corrcet colour', () => {
+			expect(app.find('.colour').text()).toEqual('Colour: Gold');
+		});
+
+		it('renders the corrcet capacity', () => {
+			expect(app.find('.capacity').text()).toEqual('Capacity: 64GB');
 		});
 	});
 
