@@ -39,6 +39,19 @@ describe('App', () => {
 		it('changes the image state when `silver` is clicked', () => {
 			expect(app.state().image).toEqual(Silver);
 		});
+	});
 
+	describe('changes the state on click of the SpaceGrey div', () =>{
+		beforeEach(() => {
+			app.find('.spaceGrey').simulate('click');
+		});
+
+		it('changes the colour state when `spaceGrey` is clicked', () => {
+			expect(app.state().colour).toEqual('Space Grey');
+		});
+
+		it('changes the image state when `spaceGrey` is clicked', () => {
+			expect(app.state().image).toEqual(SpaceGrey);
+		});
 	});
 });
