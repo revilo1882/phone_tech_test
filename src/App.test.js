@@ -97,6 +97,12 @@ describe('App', () => {
 			});
 		});
 
+		describe('changes the image to Silver', () => {
+			it('changes the image when `silver` is clicked', () => {
+				expect(app.find('.phoneImage').prop('src')).toEqual(Silver);
+			});
+		});
+
 		describe('clicking back on the Gold element', () =>{
 			beforeEach(() => {
 				app.find('.gold').simulate('click');
@@ -109,6 +115,12 @@ describe('App', () => {
 
 				it('changes the image state when `gold` is clicked', () => {
 					expect(app.state().image).toEqual(Gold);
+				});
+			});
+
+			describe('changes the image back to Gold', () => {
+				it('changes the image when `gold` is clicked', () => {
+					expect(app.find('.phoneImage').prop('src')).toEqual(Gold);
 				});
 			});
 		});
@@ -126,6 +138,12 @@ describe('App', () => {
 
 			it('changes the image state when `spaceGrey` is clicked', () => {
 				expect(app.state().image).toEqual(SpaceGrey);
+			});
+		});
+
+		describe('changes the image to SpaceGrey', () => {
+			it('changes the image when `spaceGrey` is clicked', () => {
+				expect(app.find('.phoneImage').prop('src')).toEqual(SpaceGrey);
 			});
 		});
 	});
