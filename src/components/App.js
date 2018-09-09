@@ -3,8 +3,8 @@ import data from '../data/phones.json';
 import Picture from './Picture';
 import Summary from './Summary';
 import Cost from './Cost';
-const COLOURS = ['Gold', 'Silver', 'Space Grey'];
-const MEMORY = ['64GB', '256GB'];
+export const COLOURS = ['Gold', 'Silver', 'Space Grey'];
+export const MEMORY = ['64GB', '256GB'];
 
 
 class App extends Component {

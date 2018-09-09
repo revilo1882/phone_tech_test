@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import App from './App';
+import App, { COLOURS, MEMORY } from './App';
 
 
 describe('App', () => {
@@ -8,21 +8,21 @@ describe('App', () => {
 
 	describe('initial rendering', () => {
 		it('renders the correct colour', () => {
-			expect(app.find('.colour').text()).toEqual('Colour: Gold');
+			expect(app.find('.colour').text()).toEqual(`Colour: ${COLOURS[0]}`);
 		});
 
 		it('renders the corrcet capacity', () => {
-			expect(app.find('.capacity').text()).toEqual('Capacity: 64GB');
+			expect(app.find('.capacity').text()).toEqual(`Capacity: ${MEMORY[0]}`);
 		});
 	});
 
 	describe('initial state', () => {
 		it('sets the initial colour state', () => {
-			expect(app.state().colour).toEqual('Gold');
+			expect(app.state().colour).toEqual(COLOURS[0]);
 		});
 
 		it('sets the initial capacity state', () => {
-			expect(app.state().capacity).toEqual('64GB');
+			expect(app.state().capacity).toEqual(MEMORY[0]);
 		});
 	});
 
@@ -55,13 +55,13 @@ describe('App', () => {
 
 		describe('changes the state to Silver', () => {
 			it('changes the colour state when `silver` is clicked', () => {
-				expect(app.state().colour).toEqual('Silver');
+				expect(app.state().colour).toEqual(COLOURS[1]);
 			});
 		});
 
 		describe('changes the rendering to Silver', () => {
 			it('renders the corrcet colour', () => {
-				expect(app.find('.colour').text()).toEqual('Colour: Silver');
+				expect(app.find('.colour').text()).toEqual(`Colour: ${COLOURS[1]}`);
 			});
 		});
 
@@ -72,13 +72,13 @@ describe('App', () => {
 
 			describe('changes the state to Gold', () => {
 				it('changes the colour state when `gold` is clicked', () => {
-					expect(app.state().colour).toEqual('Gold');
+					expect(app.state().colour).toEqual(COLOURS[0]);
 				});
 			});
 
 			describe('changes the rendering to Gold', () => {
 				it('renders the corrcet colour', () => {
-					expect(app.find('.colour').text()).toEqual('Colour: Gold');
+					expect(app.find('.colour').text()).toEqual(`Colour: ${COLOURS[0]}`);
 				});
 			});
 		});
@@ -91,13 +91,13 @@ describe('App', () => {
 
 		describe('changes the state to Space Grey', () => {
 			it('changes the colour state when `spaceGrey` is clicked', () => {
-				expect(app.state().colour).toEqual('Space Grey');
+				expect(app.state().colour).toEqual(COLOURS[2]);
 			});
 		});
 
 		describe('changes the rendering to SpaceGrey', () => {
 			it('renders the corrcet colour', () => {
-				expect(app.find('.colour').text()).toEqual('Colour: Space Grey');
+				expect(app.find('.colour').text()).toEqual(`Colour: ${COLOURS[2]}`);
 			});
 		});
 	});
@@ -109,13 +109,13 @@ describe('App', () => {
 
 		describe('changes the state when `256GB` is clicked', () => {
 			it('changes the capacity state when `twoFiveSix` is clicked', () => {
-				expect(app.state().capacity).toEqual('256GB');
+				expect(app.state().capacity).toEqual(MEMORY[1]);
 			});
 		});
 
 		describe('changes the rendering to 256GB', () => {
 			it('renders the corrcet capacity', () => {
-				expect(app.find('.capacity').text()).toEqual('Capacity: 256GB');
+				expect(app.find('.capacity').text()).toEqual(`Capacity: ${MEMORY[1]}`);
 			});
 		});
 
@@ -126,13 +126,13 @@ describe('App', () => {
 
 			describe('changes the state when `64GB` is clicked', () => {
 				it('changes the capacity state back when `sixtyFour` is clicked', () => {
-					expect(app.state().capacity).toEqual('64GB');
+					expect(app.state().capacity).toEqual(MEMORY[0]);
 				});
 			});
 
 			describe('changes the rendering to 64GB', () => {
 				it('renders the corrcet capacity', () => {
-					expect(app.find('.capacity').text()).toEqual('Capacity: 64GB');
+					expect(app.find('.capacity').text()).toEqual(`Capacity: ${MEMORY[0]}`);
 				});
 			});
 		});
