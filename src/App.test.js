@@ -1,16 +1,12 @@
 import React from 'react';
 import { configure, mount } from 'enzyme';
 import App from './App';
-import Gold from './images/Apple_iPhone_8_Gold-full-product-front.png';
-import Silver from './images/Apple_iPhone_8_Silver_WS2-full-product-front.png';
-import SpaceGrey from './images/Apple_iPhone_8_Space_Grey_WS2-full-product-front.png';
-import data from './data/phones.json';
 import Adapter from 'enzyme-adapter-react-16';
 
 configure({ adapter: new Adapter() });
 
 describe('App', () => {
-	let app = mount(<App />);
+	let app = mount(<App data={[1]}/>);
 
 	describe('initial rendering', () => {
 		it('renders the App title', () => {
@@ -23,10 +19,6 @@ describe('App', () => {
 
 		it('renders the stars', () => {
 			expect(app.find('h3').text()).toEqual('★★★★★');
-		});
-
-		it('renders the correct image', () => {
-			expect(app.find('.phoneImage').prop('src')).toEqual(Gold);
 		});
 
 		it('renders the corrcet colour', () => {
@@ -53,10 +45,6 @@ describe('App', () => {
 
 		it('sets the initial capacity state', () => {
 			expect(app.state().capacity).toEqual('64GB');
-		});
-
-		it('sets the initial image state', () => {
-			expect(app.state().image).toEqual(Gold);
 		});
 	});
 
@@ -91,16 +79,6 @@ describe('App', () => {
 			it('changes the colour state when `silver` is clicked', () => {
 				expect(app.state().colour).toEqual('Silver');
 			});
-
-			it('changes the image state when `silver` is clicked', () => {
-				expect(app.state().image).toEqual(Silver);
-			});
-		});
-
-		describe('changes the image to Silver', () => {
-			it('changes the image when `silver` is clicked', () => {
-				expect(app.find('.phoneImage').prop('src')).toEqual(Silver);
-			});
 		});
 
 		describe('changes the rendering to Silver', () => {
@@ -117,16 +95,6 @@ describe('App', () => {
 			describe('changes the state to Gold', () => {
 				it('changes the colour state when `gold` is clicked', () => {
 					expect(app.state().colour).toEqual('Gold');
-				});
-
-				it('changes the image state when `gold` is clicked', () => {
-					expect(app.state().image).toEqual(Gold);
-				});
-			});
-
-			describe('changes the image back to Gold', () => {
-				it('changes the image when `gold` is clicked', () => {
-					expect(app.find('.phoneImage').prop('src')).toEqual(Gold);
 				});
 			});
 
@@ -146,16 +114,6 @@ describe('App', () => {
 		describe('changes the state to Space Grey', () => {
 			it('changes the colour state when `spaceGrey` is clicked', () => {
 				expect(app.state().colour).toEqual('Space Grey');
-			});
-
-			it('changes the image state when `spaceGrey` is clicked', () => {
-				expect(app.state().image).toEqual(SpaceGrey);
-			});
-		});
-
-		describe('changes the image to SpaceGrey', () => {
-			it('changes the image when `spaceGrey` is clicked', () => {
-				expect(app.find('.phoneImage').prop('src')).toEqual(SpaceGrey);
 			});
 		});
 

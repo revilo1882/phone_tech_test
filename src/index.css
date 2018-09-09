@@ -105,6 +105,7 @@ body {
 
 .line {
   display: inline-block;
+  color: lightgrey;
   font-weight: lighter;
   font-size: 100px;
   margin-left: 100px;

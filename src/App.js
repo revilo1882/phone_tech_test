@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import data from './data/phones.json';
-import Gold from './images/Apple_iPhone_8_Gold-full-product-front.png';
-import Silver from './images/Apple_iPhone_8_Silver_WS2-full-product-front.png';
-import SpaceGrey from './images/Apple_iPhone_8_Space_Grey_WS2-full-product-front.png';
+import Picture from './components/Picture';
 
 class App extends Component {
 	constructor() {
@@ -10,8 +8,7 @@ class App extends Component {
 
 		this.state = {
 			colour: 'Gold',
-			capacity: '64GB',
-			image: Gold
+			capacity: '64GB'
 		};
 	}
 
@@ -28,91 +25,79 @@ class App extends Component {
 		return stars;
 	}
 
-	checkModel(phone) {
-		return (this.state.colour === phone.colourName && this.state.capacity === phone.memory);
+	checkPhone(phones) {
+		return phones.find((phone) => {
+			return (this.state.colour === phone.colourName && this.state.capacity === phone.memory) && phone;
+		});
 	}
 
 	render() {
 		const phones = data[0].deviceSummary;
+		const capacity = this.state.capacity;
+		const colour = this.state.colour;
+		const selectedPhone = this.checkPhone(phones);
 		return (
 			<div>
-				<img className='phoneImage'
-					src={this.state.image}
-					alt=''
-				/>
+				<Picture image={selectedPhone.merchandisingMedia[0].value}/>
 				<div className='information'>
 					<h1 className='model'>{data[0].groupName}</h1>
 					<h3 >{this.starRating()}</h3>
-					<p className='description'>
-						{phones.map((phone) => {
-							return this.checkModel(phone) && phone.displayDescription;
-						})}
-					</p>
+					<p className='description'>{selectedPhone.displayDescription}</p>
 				</div>
 				<div className='selection'>
 					<div className='colour'>
             Colour: {''}
 						<div className='selected'>
-							{this.state.colour}
+							{colour}
 						</div>
 					</div>
 					<div className='capacity'>
             Capacity: {''}
 						<div className='selected'>
-							{this.state.capacity}
+							{capacity}
 						</div>
 					</div>
 					<div>
 						<div
 							className='gold'
-							onClick={() => this.setState({ colour: 'Gold', image: Gold })}
-							style={this.state.colour === 'Gold' ? { boxShadow:'0 0 0 1pt SeaGreen'} : { boxShadow:'none'} }
+							onClick={() => this.setState({ colour: 'Gold' })}
+							style={colour === 'Gold' ? { boxShadow:'0 0 0 1pt SeaGreen' } : { boxShadow:'none' }}
 						>
 						</div>
 						<div
 							className='silver'
-							onClick={() => this.setState({ colour: 'Silver', image: Silver })}
-							style={this.state.colour === 'Silver' ? { boxShadow:'0 0 0 1pt SeaGreen'} : { boxShadow:'none'}}
+							onClick={() => this.setState({ colour: 'Silver' })}
+							style={colour === 'Silver' ? { boxShadow:'0 0 0 1pt SeaGreen' } : { boxShadow:'none' }}
 						>
 						</div>
 						<div
 							className='spaceGrey'
-							onClick={() => this.setState({ colour: 'Space Grey', image: SpaceGrey })}
-							style={this.state.colour === 'Space Grey' ? { boxShadow:'0 0 0 1pt SeaGreen'} : { boxShadow:'none'}}
+							onClick={() => this.setState({ colour: 'Space Grey'})}
+							style={colour === 'Space Grey' ? { boxShadow:'0 0 0 1pt SeaGreen' } : { boxShadow:'none' }}
 						>
 						</div>
 						<div
 							className='sixtyFour'
 							onClick={() => this.setState({ capacity: '64GB' })}
-							style={this.state.capacity === '64GB' ? { boxShadow:'0 0 0 1pt SeaGreen'} : { boxShadow:'none'}}
+							style={capacity === '64GB' ? { boxShadow:'0 0 0 1pt SeaGreen' } : { boxShadow:'none' }}
 						>64
 						</div>
 						<div
 							className='twoFiveSix'
 							onClick={() => this.setState({ capacity: '256GB' })}
-							style={this.state.capacity === '256GB' ? { boxShadow:'0 0 0 1pt SeaGreen'} : { boxShadow:'none'}}
+							style={capacity === '256GB' ? { boxShadow:'0 0 0 1pt SeaGreen' } : { boxShadow:'none' }}
 						>256
 						</div>
 					</div>
 				</div>
 				<div className='cost'>
-					<span className='upfront'>
-            from {''}
-						<span className='price'>
-              £
-							{phones.map((phone) => {
-								return this.checkModel(phone) && phone.priceInfo.hardwarePrice.oneOffPrice.gross;
-							})}
-						</span> upfront cost</span>
+					<span className='upfront'>from <span className='price'>
+							£{selectedPhone.priceInfo.hardwarePrice.oneOffPrice.gross} </span>
+							upfront cost</span>
 					<span className='line'>|</span>
-					<span className='monthly'>
-            when you pay {''}
-						<span className='price'>
-              £
-							{phones.map((phone) => {
-								return this.checkModel(phone) && phone.priceInfo.bundlePrice.monthlyPrice.gross;
-							})}
-						</span> a month</span>
+					<span className='monthly'>when you pay <span className='price'>
+							£{selectedPhone.priceInfo.bundlePrice.monthlyPrice.gross} </span>
+							a month</span>
 				</div>
 			</div>
 		);
