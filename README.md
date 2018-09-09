@@ -1,6 +1,9 @@
+npm install
+npm start
+npm test
 npm test -- --coverage
 
-
+- No test for Picture component, is it due to require?
 ```
 const props = { image: '/Testimage.png'};
 
@@ -14,3 +17,12 @@ describe('Summary', () => {
 
 });
 ```
+- Otherwise 100% test coverage on all components
+
+- consts on App for easy update
+- testing App would be more easily reusable if it was to find div element at rather than name.
+- App component is very long
+
+- Why React and Enzyme?
+- Improve css
+- Process: User stories, understanding json file.   Initially one big file.

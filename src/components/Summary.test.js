@@ -4,7 +4,6 @@ import Summary from './Summary';
 
 const props = { model: 'Test phone', description: 'Test description' };
 
-
 describe('Summary', () => {
 	let summary = shallow(<Summary {...props}/>);
 
