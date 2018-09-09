@@ -7,7 +7,7 @@ describe('App', () => {
 	let app = shallow(<App />);
 
 	describe('initial rendering', () => {
-		it('renders the corrcet colour', () => {
+		it('renders the correct colour', () => {
 			expect(app.find('.colour').text()).toEqual('Colour: Gold');
 		});
 

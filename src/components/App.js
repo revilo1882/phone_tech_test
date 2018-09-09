@@ -3,15 +3,17 @@ import data from '../data/phones.json';
 import Picture from './Picture';
 import Summary from './Summary';
 import Cost from './Cost';
-const MEMORY = [64, 256];
+const COLOURS = ['Gold', 'Silver', 'Space Grey'];
+const MEMORY = ['64GB', '256GB'];
+
 
 class App extends Component {
 	constructor() {
 		super();
 
 		this.state = {
-			colour: 'Gold',
-			capacity: '64GB'
+			colour: COLOURS[0],
+			capacity: MEMORY[0]
 		};
 	}
 
@@ -50,33 +52,33 @@ class App extends Component {
 					<div>
 						<div
 							className='gold'
-							onClick={() => this.setState({ colour: 'Gold' })}
-							style={colour === 'Gold' ? { boxShadow:'0 0 0 1pt SeaGreen' } : { boxShadow:'none' }}
+							onClick={() => this.setState({ colour: COLOURS[0] })}
+							style={colour === COLOURS[0] ? { boxShadow:'0 0 0 1pt SeaGreen' } : { boxShadow:'none' }}
 						>
 						</div>
 						<div
 							className='silver'
-							onClick={() => this.setState({ colour: 'Silver' })}
-							style={colour === 'Silver' ? { boxShadow:'0 0 0 1pt SeaGreen' } : { boxShadow:'none' }}
+							onClick={() => this.setState({ colour: COLOURS[1] })}
+							style={colour === COLOURS[1] ? { boxShadow:'0 0 0 1pt SeaGreen' } : { boxShadow:'none' }}
 						>
 						</div>
 						<div
 							className='spaceGrey'
-							onClick={() => this.setState({ colour: 'Space Grey'})}
-							style={colour === 'Space Grey' ? { boxShadow:'0 0 0 1pt SeaGreen' } : { boxShadow:'none' }}
+							onClick={() => this.setState({ colour: COLOURS[2] })}
+							style={colour === COLOURS[2] ? { boxShadow:'0 0 0 1pt SeaGreen' } : { boxShadow:'none' }}
 						>
 						</div>
 						<div
 							className='sixtyFour'
-							onClick={() => this.setState({ capacity: '64GB' })}
-							style={capacity === '64GB' ? { boxShadow:'0 0 0 1pt SeaGreen' } : { boxShadow:'none' }}
-						>{MEMORY[0]}
+							onClick={() => this.setState({ capacity: MEMORY[0] })}
+							style={capacity === MEMORY[0] ? { boxShadow:'0 0 0 1pt SeaGreen' } : { boxShadow:'none' }}
+						>{MEMORY[0].substring(0, MEMORY[0].length - 2)}
 						</div>
 						<div
 							className='twoFiveSix'
-							onClick={() => this.setState({ capacity: '256GB' })}
-							style={capacity === '256GB' ? { boxShadow:'0 0 0 1pt SeaGreen' } : { boxShadow:'none' }}
-						>{MEMORY[1]}
+							onClick={() => this.setState({ capacity: MEMORY[1] })}
+							style={capacity === MEMORY[1] ? { boxShadow:'0 0 0 1pt SeaGreen' } : { boxShadow:'none' }}
+						>{MEMORY[1].substring(0, MEMORY[1].length - 2)}
 						</div>
 					</div>
 				</div>
