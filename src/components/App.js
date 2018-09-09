@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import data from './data/phones.json';
-import Picture from './components/Picture';
-import Summary from './components/Summary';
-import Cost from './components/Cost';
+import data from '../data/phones.json';
+import Picture from './Picture';
+import Summary from './Summary';
+import Cost from './Cost';
+const MEMORY = [64, 256];
 
 class App extends Component {
 	constructor() {
@@ -69,13 +70,13 @@ class App extends Component {
 							className='sixtyFour'
 							onClick={() => this.setState({ capacity: '64GB' })}
 							style={capacity === '64GB' ? { boxShadow:'0 0 0 1pt SeaGreen' } : { boxShadow:'none' }}
-						>64
+						>{MEMORY[0]}
 						</div>
 						<div
 							className='twoFiveSix'
 							onClick={() => this.setState({ capacity: '256GB' })}
 							style={capacity === '256GB' ? { boxShadow:'0 0 0 1pt SeaGreen' } : { boxShadow:'none' }}
-						>256
+						>{MEMORY[1]}
 						</div>
 					</div>
 				</div>
