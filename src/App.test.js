@@ -7,14 +7,6 @@ describe('App', () => {
 	let app = shallow(<App />);
 
 	describe('initial rendering', () => {
-		it('renders the App title', () => {
-			expect(app.find('h1').text()).toEqual('Apple iPhone 8');
-		});
-
-		it('renders the description', () => {
-			expect(app.find('p').text()).toEqual('All-glass design, advanced cameras, wireless charging and a smart A11 Bionic chip. Intelligence never looked better.');
-		});
-
 		it('renders the corrcet colour', () => {
 			expect(app.find('.colour').text()).toEqual('Colour: Gold');
 		});

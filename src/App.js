@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import data from './data/phones.json';
 import Picture from './components/Picture';
-import Rating from './components/Rating';
+import Summary from './components/Summary';
 
 class App extends Component {
 	constructor() {
@@ -27,11 +27,11 @@ class App extends Component {
 		return (
 			<div>
 				<Picture image={selectedPhone.merchandisingMedia[0].value}/>
-				<div className='information'>
-					<h1 className='model'>{data[0].groupName}</h1>
-					<Rating rating={data[0].rating} />
-					<p className='description'>{selectedPhone.displayDescription}</p>
-				</div>
+				<Summary
+					model={data[0].groupName}
+					rating={data[0].rating}
+					description={selectedPhone.displayDescription}
+				/>
 				<div className='selection'>
 					<div className='colour'>
             Colour: {''}
