@@ -14,14 +14,6 @@ describe('App', () => {
 		it('renders the corrcet capacity', () => {
 			expect(app.find('.capacity').text()).toEqual('Capacity: 64GB');
 		});
-
-		it('renders the corrcet upfront cost', () => {
-			expect(app.find('.upfront').text()).toEqual('from £149 upfront cost');
-		});
-
-		it('renders the corrcet monthly cost', () => {
-			expect(app.find('.monthly').text()).toEqual('when you pay £43.20 a month');
-		});
 	});
 
 	describe('initial state', () => {
@@ -125,14 +117,6 @@ describe('App', () => {
 			it('renders the corrcet capacity', () => {
 				expect(app.find('.capacity').text()).toEqual('Capacity: 256GB');
 			});
-
-			it('renders the corrcet upfront cost', () => {
-				expect(app.find('.upfront').text()).toEqual('from £275 upfront cost');
-			});
-
-			it('renders the corrcet monthly cost', () => {
-				expect(app.find('.monthly').text()).toEqual('when you pay £46.80 a month');
-			});
 		});
 
 		describe('clicking on the sixtyFour element', () =>{
@@ -149,14 +133,6 @@ describe('App', () => {
 			describe('changes the rendering to 64GB', () => {
 				it('renders the corrcet capacity', () => {
 					expect(app.find('.capacity').text()).toEqual('Capacity: 64GB');
-				});
-
-				it('renders the corrcet upfront cost', () => {
-					expect(app.find('.upfront').text()).toEqual('from £149 upfront cost');
-				});
-
-				it('renders the corrcet monthly cost', () => {
-					expect(app.find('.monthly').text()).toEqual('when you pay £43.20 a month');
 				});
 			});
 		});

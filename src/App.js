@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import data from './data/phones.json';
 import Picture from './components/Picture';
 import Summary from './components/Summary';
+import Cost from './components/Cost';
 
 class App extends Component {
 	constructor() {
@@ -78,15 +79,10 @@ class App extends Component {
 						</div>
 					</div>
 				</div>
-				<div className='cost'>
-					<span className='upfront'>from <span className='price'>
-							£{selectedPhone.priceInfo.hardwarePrice.oneOffPrice.gross} </span>
-							upfront cost</span>
-					<span className='line'>|</span>
-					<span className='monthly'>when you pay <span className='price'>
-							£{selectedPhone.priceInfo.bundlePrice.monthlyPrice.gross} </span>
-							a month</span>
-				</div>
+				<Cost
+					upfront={selectedPhone.priceInfo.hardwarePrice.oneOffPrice.gross}
+					monthly={selectedPhone.priceInfo.bundlePrice.monthlyPrice.gross}
+				/>
 			</div>
 		);
 	}
