@@ -1,12 +1,10 @@
 import React from 'react';
-import { configure, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import App from './App';
-import Adapter from 'enzyme-adapter-react-16';
 
-configure({ adapter: new Adapter() });
 
 describe('App', () => {
-	let app = mount(<App data={[1]}/>);
+	let app = shallow(<App />);
 
 	describe('initial rendering', () => {
 		it('renders the App title', () => {
@@ -15,10 +13,6 @@ describe('App', () => {
 
 		it('renders the description', () => {
 			expect(app.find('p').text()).toEqual('All-glass design, advanced cameras, wireless charging and a smart A11 Bionic chip. Intelligence never looked better.');
-		});
-
-		it('renders the stars', () => {
-			expect(app.find('h3').text()).toEqual('★★★★★');
 		});
 
 		it('renders the corrcet colour', () => {

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import data from './data/phones.json';
 import Picture from './components/Picture';
+import Rating from './components/Rating';
 
 class App extends Component {
 	constructor() {
@@ -10,19 +11,6 @@ class App extends Component {
 			colour: 'Gold',
 			capacity: '64GB'
 		};
-	}
-
-	starRating(){
-		var stars = [];
-		var i;
-		var j;
-		for (i=0; i<= data[0].rating; i++) {
-			stars.push(<span key={i} style={{color: 'gold'}}>&#9733;</span>);
-		}
-		for (j=stars.length; stars.length < 5; j++) {
-			stars.push(<span key={j} style={{color: 'grey'}}>&#9733;</span>);
-		}
-		return stars;
 	}
 
 	checkPhone(phones) {
@@ -41,7 +29,7 @@ class App extends Component {
 				<Picture image={selectedPhone.merchandisingMedia[0].value}/>
 				<div className='information'>
 					<h1 className='model'>{data[0].groupName}</h1>
-					<h3 >{this.starRating()}</h3>
+					<Rating rating={data[0].rating} />
 					<p className='description'>{selectedPhone.displayDescription}</p>
 				</div>
 				<div className='selection'>

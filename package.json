@@ -18,6 +18,9 @@
     "enzyme-adapter-react-16": "^1.5.0",
     "eslint": "^5.4.0",
     "eslint-plugin-react": "^7.11.1",
+    "jest": {
+      "setupTestFrameworkScriptFile": "./src/setupTests.js"
+    },
     "react-test-renderer": "^16.5.0"
   }
 }
