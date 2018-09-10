@@ -44,7 +44,7 @@ body {
 
 .capacity {
   display: inline-block;
-  margin-left: 200px;
+  margin-left: 145px;
 }
 
 .gold, .silver, .space-grey{
@@ -88,7 +88,7 @@ body {
 }
 
 .sixty-four {
-  margin-left: 220px;
+  margin-left: 160px;
 }
 
 .two-five-six {
@@ -113,7 +113,6 @@ body {
 
 .upfront, .monthly {
   margin-left: 20px;
-  vertical-align: text-bottom;
 }
 
 .price {
