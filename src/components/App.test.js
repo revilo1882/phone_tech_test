@@ -27,29 +27,29 @@ describe('App', () => {
 
 	describe('initial styling', () => {
 		it('sets the style of the Gold element', () => {
-			expect(app.find('.gold').prop('style')).toEqual({boxShadow: '0 0 0 1pt SeaGreen'});
+			expect(app.find('span').at(0).prop('style')).toEqual({boxShadow: '0 0 0 1pt SeaGreen'});
 		});
 
 		it('sets the style of the Silver element', () => {
-			expect(app.find('.silver').prop('style')).toEqual({boxShadow: 'none'});
+			expect(app.find('span').at(1).prop('style')).toEqual({boxShadow: 'none'});
 		});
 
 		it('sets the style of the Space Grey element', () => {
-			expect(app.find('.spaceGrey').prop('style')).toEqual({boxShadow: 'none'});
+			expect(app.find('span').at(2).prop('style')).toEqual({boxShadow: 'none'});
 		});
 
 		it('sets the style of the 64GB element', () => {
-			expect(app.find('.sixtyFour').prop('style')).toEqual({boxShadow: '0 0 0 1pt SeaGreen'});
+			expect(app.find('span').at(3).prop('style')).toEqual({boxShadow: '0 0 0 1pt SeaGreen'});
 		});
 
 		it('sets the style of the 256GBelement', () => {
-			expect(app.find('.twoFiveSix').prop('style')).toEqual({boxShadow: 'none'});
+			expect(app.find('span').at(4).prop('style')).toEqual({boxShadow: 'none'});
 		});
 	});
 
 	describe('clicking on the Silver element', () =>{
 		beforeEach(() => {
-			app.find('.silver').simulate('click');
+			app.find('span').at(1).simulate('click');
 		});
 
 		it('changes the colour state when `silver` is clicked', () => {
@@ -63,7 +63,7 @@ describe('App', () => {
 
 		describe('clicking back on the Gold element', () =>{
 			beforeEach(() => {
-				app.find('.gold').simulate('click');
+				app.find('span').at(0).simulate('click');
 			});
 
 			it('changes the colour state when `gold` is clicked', () => {
@@ -78,7 +78,7 @@ describe('App', () => {
 
 	describe('clicking on the SpaceGrey element', () =>{
 		beforeEach(() => {
-			app.find('.spaceGrey').simulate('click');
+			app.find('span').at(2).simulate('click');
 		});
 
 		it('changes the colour state when `spaceGrey` is clicked', () => {
@@ -92,7 +92,7 @@ describe('App', () => {
 
 	describe('clicking on the twoFiveSix element', () =>{
 		beforeEach(() => {
-			app.find('.twoFiveSix').simulate('click');
+			app.find('span').at(4).simulate('click');
 		});
 
 		it('changes the capacity state when `twoFiveSix` is clicked', () => {
@@ -106,7 +106,7 @@ describe('App', () => {
 
 		describe('clicking on the sixtyFour element', () =>{
 			beforeEach(() => {
-				app.find('.sixtyFour').simulate('click');
+				app.find('span').at(3).simulate('click');
 			});
 
 			it('changes the capacity state back when `sixtyFour` is clicked', () => {

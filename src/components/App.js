@@ -8,7 +8,6 @@ export const COLOURS = ['Gold', 'Silver', 'Space Grey'];
 export const MEMORY = ['64GB', '256GB'];
 
 class App extends Component {
-
 	constructor() {
 		super();
 
@@ -25,10 +24,9 @@ class App extends Component {
 	}
 
 	render() {
-		const phones = data[0].deviceSummary;
 		const capacity = this.state.capacity;
 		const colour = this.state.colour;
-		const selectedPhone = this.checkPhone(phones);
+		const selectedPhone = this.checkPhone(data[0].deviceSummary);
 		return (
 			<div>
 				<Picture image={selectedPhone.merchandisingMedia[0].value}/>
@@ -51,36 +49,36 @@ class App extends Component {
 						</div>
 					</div>
 					<div>
-						<div
+						<span
 							className='gold'
 							onClick={() => this.setState({ colour: COLOURS[0] })}
 							style={colour === COLOURS[0] ? { boxShadow:'0 0 0 1pt SeaGreen' } : { boxShadow:'none' }}
 						>
-						</div>
-						<div
+						</span>
+						<span
 							className='silver'
 							onClick={() => this.setState({ colour: COLOURS[1] })}
 							style={colour === COLOURS[1] ? { boxShadow:'0 0 0 1pt SeaGreen' } : { boxShadow:'none' }}
 						>
-						</div>
-						<div
-							className='spaceGrey'
+						</span>
+						<span
+							className='space-grey'
 							onClick={() => this.setState({ colour: COLOURS[2] })}
 							style={colour === COLOURS[2] ? { boxShadow:'0 0 0 1pt SeaGreen' } : { boxShadow:'none' }}
 						>
-						</div>
-						<div
-							className='sixtyFour'
+						</span>
+						<span
+							className='sixty-four'
 							onClick={() => this.setState({ capacity: MEMORY[0] })}
 							style={capacity === MEMORY[0] ? { boxShadow:'0 0 0 1pt SeaGreen' } : { boxShadow:'none' }}
 						>{MEMORY[0].substring(0, MEMORY[0].length - 2)}
-						</div>
-						<div
-							className='twoFiveSix'
+						</span>
+						<span
+							className='two-five-six'
 							onClick={() => this.setState({ capacity: MEMORY[1] })}
 							style={capacity === MEMORY[1] ? { boxShadow:'0 0 0 1pt SeaGreen' } : { boxShadow:'none' }}
 						>{MEMORY[1].substring(0, MEMORY[1].length - 2)}
-						</div>
+						</span>
 					</div>
 				</div>
 				<Cost

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 class Cost extends Component {
-
 	render() {
 		return (
 			<div className='cost'>

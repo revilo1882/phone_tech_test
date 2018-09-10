@@ -4,7 +4,7 @@ import Cost from './Cost';
 
 const props = { upfront: '100', monthly: '50.50' };
 
-describe('Summary', () => {
+describe('Cost', () => {
 	let cost = shallow(<Cost {...props}/>);
 
 	it('renders the corrcet upfront cost', () => {

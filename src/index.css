@@ -4,7 +4,7 @@ body {
   width: 1150px;
 }
 
-.phoneImage {
+.phone-image {
   float: left;
   width: 250px;
   margin-right: 5%;
@@ -47,7 +47,7 @@ body {
   margin-left: 200px;
 }
 
-.gold, .silver, .spaceGrey{
+.gold, .silver, .space-grey{
   vertical-align: top;
   margin-top: 20px;
   border-radius: 10px;
@@ -68,12 +68,12 @@ body {
   margin-left: 5px;
 }
 
-.spaceGrey {
+.space-grey {
   background-color: black;
   margin-left: 5px;
 }
 
-.sixtyFour, .twoFiveSix {
+.sixty-four, .two-five-six {
   background-color: #F5F5F5;
   border: solid lightgrey;
   vertical-align: top;
@@ -87,11 +87,11 @@ body {
   cursor: pointer;
 }
 
-.sixtyFour {
+.sixty-four {
   margin-left: 220px;
 }
 
-.twoFiveSix {
+.two-five-six {
   margin-left: 5px;
 }
 
