@@ -26,94 +26,94 @@ describe('App', () => {
 	});
 
 	describe('initial styling', () => {
-		it('sets the style of the Gold element', () => {
+		it('sets the style of the first colour', () => {
 			expect(app.find('span').at(0).prop('style')).toEqual({boxShadow: '0 0 0 1pt SeaGreen'});
 		});
 
-		it('sets the style of the Silver element', () => {
+		it('sets the style of the second colour', () => {
 			expect(app.find('span').at(1).prop('style')).toEqual({boxShadow: 'none'});
 		});
 
-		it('sets the style of the Space Grey element', () => {
+		it('sets the style of the third colour', () => {
 			expect(app.find('span').at(2).prop('style')).toEqual({boxShadow: 'none'});
 		});
 
-		it('sets the style of the 64GB element', () => {
+		it('sets the style of the first capacity', () => {
 			expect(app.find('span').at(3).prop('style')).toEqual({boxShadow: '0 0 0 1pt SeaGreen'});
 		});
 
-		it('sets the style of the 256GBelement', () => {
+		it('sets the style of the second capacity', () => {
 			expect(app.find('span').at(4).prop('style')).toEqual({boxShadow: 'none'});
 		});
 	});
 
-	describe('clicking on the Silver element', () =>{
+	describe('clicking on the second colour', () =>{
 		beforeEach(() => {
 			app.find('span').at(1).simulate('click');
 		});
 
-		it('changes the colour state when `silver` is clicked', () => {
+		it('changes the colour state when clicked', () => {
 			expect(app.state().colour).toEqual(COLOURS[1]);
 		});
 
-		it('renders the corrcet colour', () => {
+		it('renders the corrcet colour when clicked', () => {
 			expect(app.find('.colour').text()).toEqual(`Colour: ${COLOURS[1]}`);
 		});
 
 
-		describe('clicking back on the Gold element', () =>{
+		describe('clicking back on the first colour', () =>{
 			beforeEach(() => {
 				app.find('span').at(0).simulate('click');
 			});
 
-			it('changes the colour state when `gold` is clicked', () => {
+			it('changes the colour state when clicked', () => {
 				expect(app.state().colour).toEqual(COLOURS[0]);
 			});
 
-			it('renders the corrcet colour', () => {
+			it('renders the corrcet colour when clicked', () => {
 				expect(app.find('.colour').text()).toEqual(`Colour: ${COLOURS[0]}`);
 			});
 		});
 	});
 
-	describe('clicking on the SpaceGrey element', () =>{
+	describe('clicking on the third colour', () =>{
 		beforeEach(() => {
 			app.find('span').at(2).simulate('click');
 		});
 
-		it('changes the colour state when `spaceGrey` is clicked', () => {
+		it('changes the colour state when clicked', () => {
 			expect(app.state().colour).toEqual(COLOURS[2]);
 		});
 
-		it('renders the corrcet colour', () => {
+		it('renders the corrcet colour when clicked', () => {
 			expect(app.find('.colour').text()).toEqual(`Colour: ${COLOURS[2]}`);
 		});
 	});
 
-	describe('clicking on the twoFiveSix element', () =>{
+	describe('clicking on the second capacity', () =>{
 		beforeEach(() => {
 			app.find('span').at(4).simulate('click');
 		});
 
-		it('changes the capacity state when `twoFiveSix` is clicked', () => {
+		it('changes the capacity state when clicked', () => {
 			expect(app.state().capacity).toEqual(MEMORY[1]);
 		});
 
 
-		it('renders the corrcet capacity', () => {
+		it('renders the corrcet capacity when clicked', () => {
 			expect(app.find('.capacity').text()).toEqual(`Capacity: ${MEMORY[1]}`);
 		});
 
-		describe('clicking on the sixtyFour element', () =>{
+		describe('clicking on the back on the first capacity', () =>{
 			beforeEach(() => {
 				app.find('span').at(3).simulate('click');
 			});
 
-			it('changes the capacity state back when `sixtyFour` is clicked', () => {
+			it('changes the capacity state back when clicked', () => {
 				expect(app.state().capacity).toEqual(MEMORY[0]);
 			});
 
-			it('renders the corrcet capacity', () => {
+			it('renders the corrcet capacity when clicked', () => {
 				expect(app.find('.capacity').text()).toEqual(`Capacity: ${MEMORY[0]}`);
 			});
 		});
