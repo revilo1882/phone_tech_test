@@ -17,14 +17,14 @@ class App extends Component {
 		};
 	}
 
-	checkPhone(phones) {
+	selectPhone(phones) {
 		return phones.find((phone) => {
 			return (this.state.colour === phone.colourName && this.state.capacity === phone.memory) && phone;
 		});
 	}
 
 	render() {
-		const selectedPhone = this.checkPhone(data[0].deviceSummary);
+		const selectedPhone = this.selectPhone(data[0].deviceSummary);
 		const capacity = this.state.capacity;
 		const colour = this.state.colour;
 		return (
