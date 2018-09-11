@@ -23,10 +23,14 @@ class App extends Component {
 		});
 	}
 
+	setBoxShadow() {
+
+	}
+
 	render() {
+		const selectedPhone = this.checkPhone(data[0].deviceSummary);
 		const capacity = this.state.capacity;
 		const colour = this.state.colour;
-		const selectedPhone = this.checkPhone(data[0].deviceSummary);
 		return (
 			<div>
 				<Picture image={selectedPhone.merchandisingMedia[0].value}/>
@@ -36,17 +40,11 @@ class App extends Component {
 					description={selectedPhone.displayDescription}
 				/>
 				<div className='selection'>
-					<div className='colour'>
-            Colour: {''}
-						<div className='selected'>
-							{colour}
-						</div>
+					<div className='colour'>Colour:
+						<div className='selected'> {colour}</div>
 					</div>
-					<div className='capacity'>
-            Capacity: {''}
-						<div className='selected'>
-							{capacity}
-						</div>
+					<div className='capacity'>Capacity:
+						<div className='selected'> {capacity}</div>
 					</div>
 					<div>
 						<span

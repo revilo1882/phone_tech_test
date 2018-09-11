@@ -1,3 +1,6 @@
+
+
+
 npm install
 npm start
 npm test
@@ -27,3 +30,35 @@ describe('Summary', () => {
 - Why React and Enzyme?  Why basic css.
 - Improve css/html?
 - Process: User stories, understanding json file.   Initially one big file.
+
+
+# Vodaphone Developer Task
+
+Create the phone component as displayed below that will display in Chome, E11 and Firefox.  On selection of a colour or capacity the image will change and the prices will update.
+![goal](./src/components/images/page.jpeg)
+
+
+## Run the app locally
+
+Clone the repository then in the command line run:
+
+```bash
+$ npm install
+$ npm start
+$ npm test
+$ npm test -- --coverage
+```
+
+## Motivation
+
+
+
+## Approach
+
+
+
+## Tradeoffs
+
+
+
+## Further Work
