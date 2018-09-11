@@ -49,7 +49,12 @@ I would like to see the cost of the capacity I click on.
 
 - This really helped to have a clear goal to work towards.
 
-- understanding json file.  Initially one big file.
+- Next I set up the project using the npm command create-react-app [create-react-app](https://www.npmjs.com/package/create-react-app).
+
+- Next I decided it was imperative to the task to understand the phones.json file.  I added all the files to the project folder and imported the json file into App so that I could use the console to fully understand how all the data was stored in the file and how I would use the app to access it.
+
+- I then looked at splitting the page into separate components to get a visual idea of how to build the app.  I split this into 4 main sections, the image, the header/summary, the selection boxes and the cost (upfront and monthly).
+
 - consts on App for easy update
 - testing App would be more easily reusable if it was to find div element at rather than name.
 - No test for Picture component, is it due to require?

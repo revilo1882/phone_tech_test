@@ -8,10 +8,10 @@ describe('Summary', () => {
 	let summary = shallow(<Summary {...props}/>);
 
 	it('renders the title', () => {
-		expect(summary.find('h1').text()).toEqual('Test phone');
+		expect(summary.find('h1').text()).toEqual(props.model);
 	});
 
 	it('renders the description', () => {
-		expect(summary.find('p').text()).toEqual('Test description');
+		expect(summary.find('p').text()).toEqual(props.description);
 	});
 });

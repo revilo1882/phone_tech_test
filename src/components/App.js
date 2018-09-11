@@ -23,10 +23,6 @@ class App extends Component {
 		});
 	}
 
-	setBoxShadow() {
-
-	}
-
 	render() {
 		const selectedPhone = this.checkPhone(data[0].deviceSummary);
 		const capacity = this.state.capacity;

@@ -8,10 +8,10 @@ describe('Cost', () => {
 	let cost = shallow(<Cost {...props}/>);
 
 	it('renders the corrcet upfront cost', () => {
-		expect(cost.find('.upfront').text()).toEqual('from £100 upfront cost');
+		expect(cost.find('.price').at(0).text()).toEqual('£' + props.upfront);
 	});
 
 	it('renders the corrcet monthly cost', () => {
-		expect(cost.find('.monthly').text()).toEqual('when you pay £50.50 a month');
+		expect(cost.find('.price').at(1).text()).toEqual('£' + props.monthly);
 	});
 });
