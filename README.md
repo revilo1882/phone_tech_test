@@ -34,8 +34,18 @@ describe('Summary', () => {
 
 # Vodaphone Developer Task
 
-Create the phone component as displayed below that will display in Chome, E11 and Firefox.  On selection of a colour or capacity the image will change and the prices will update.
+## Introduction
+
+The purpose of this exercise is to demonstrate my use of front end technologies to build a data driven component of a website.  
+
+## Task
+
+Create the phone component as displayed below that will display in Chome, E11 and Firefox using the json data and image files provided.  On selection of a colour or capacity the image will change and the prices will update.
 ![goal](./src/components/images/page.jpeg)
+
+## Motivation
+
+Since completing the Makers Academy course I have turned my attention to frontend development with a focus on React.  In that time I have completed some tutorials and a very basic website in React.  I decided I wanted to use this opportunity to put into practice what I have been learning so I decided to also complete this task using React.  Another focus of this project was to improve my css which I'm still very new to for a budding frontend developer, so for this purpose I decided just to concentrate on core css skills and just use basic css (although I did apply Bootstrap CDN https://getbootstrap.com/docs/3.3/getting-started/).
 
 
 ## Run the app locally
@@ -43,14 +53,17 @@ Create the phone component as displayed below that will display in Chome, E11 an
 Clone the repository then in the command line run:
 
 ```bash
+$ cd vodafone_developer_task
 $ npm install
 $ npm start
+```
+
+To run the test and check the coverage run the below commands:
+
+```bash
 $ npm test
 $ npm test -- --coverage
 ```
-
-## Motivation
-
 
 
 ## Approach
