@@ -1,5 +1,3 @@
-[Introduction](#introduction) | [Task](#task) | [Motivation](#motivation) | [Installation](#installation) |  [Approach](#approach) | [Challenges](#challenges) | [Further Work](#further-Work)
-
 # Vodaphone Developer Task
 
 ## Introduction
