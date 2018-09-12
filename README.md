@@ -11,9 +11,9 @@ Create the phone component as displayed below that will display in Chrome, E11 a
 
 ## Motivation
 
-Since completing the Makers Academy course I have turned my attention to front end development with a focus on React.  In that time I have completed tutorials and built a basic website in React.  I decided I wanted to use this opportunity to put into practice what I have been learning so I decided to also complete this task using React.  I also decided to use Enzyme for my tests as I have also just learned the utility but hadn't actually written any of my own tests yet.  However, as I am new to Enzyme I decided early on that I wouldn't take a TDD approach with this task, my goal was to fully understand using Enzyme and testing in react and I would be very happy with full coverage and all tests mocked where necessary.
+Since completing the Makers Academy course I have turned my attention to front end development with a focus on [React](https://reactjs.org/).  In that time I have completed tutorials and built a basic website in React.  I decided I wanted to use this opportunity to put into practice what I have been learning so I decided to also complete this task using React.  I also decided to use [Enzyme](https://github.com/airbnb/enzyme) for my tests as I have also just learned the utility but hadn't actually written any of my own tests yet.  Due to this I decided early on that I wouldn't take a TDD approach with this task, my goal was to fully understand using Enzyme and testing in React and I would be very happy with full coverage and all tests mocked where necessary.
 
-Another focus of this project was to improve my css which I'm still very new to for a budding front end developer, so for this purpose I decided just to concentrate on core css skills and just use basic css (although I did apply Bootstrap CDN https://getbootstrap.com/docs/3.3/getting-started/).
+Another focus of this project was to improve my css which I'm still very new to for a budding front end developer, so for this purpose I decided just to concentrate on core css skills and just use basic css (although I did apply [Bootstrap CDN](https://getbootstrap.com/docs/3.3/getting-started/)).
 
 
 ## Run the app locally
@@ -49,7 +49,7 @@ I would like to see the cost of the capacity I click on.
 
 - This really helped to have a clear goal to work towards.
 
-- Next I set up the project using the npm command create-react-app [create-react-app](https://www.npmjs.com/package/create-react-app).
+- Next I set up the project using the npm command [create-react-app](https://www.npmjs.com/package/create-react-app).
 
 - Next I decided it was imperative to the task to understand the phones.json file.  I added all the files to the project folder and imported the json file into App so that I could use the console to fully understand how all the data was stored in the file and how I would use the app to access it.
 
