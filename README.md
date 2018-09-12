@@ -11,9 +11,9 @@ Create the phone component as displayed below that will display in Chrome, E11 a
 
 ## Motivation
 
-Since completing the Makers Academy course I have turned my attention to frontend development with a focus on React.  In that time I have completed some tutorials and built a very basic website in React.  I decided I wanted to use this opportunity to put into practice what I have been learning so I decided to also complete this task using React.  I also decided to use Enzyme for my tests as I have also just learned the utility but hadn't actually written any of my own tests yet.  However, as I am new to Enzyme I decided early on that I wouldn't take a TDD approach with this task, my goal was to fully understand using Enzyme and testing in react and I would be very happy with full coverage and all tests mocked where necessary.
+Since completing the Makers Academy course I have turned my attention to front end development with a focus on React.  In that time I have completed tutorials and built a basic website in React.  I decided I wanted to use this opportunity to put into practice what I have been learning so I decided to also complete this task using React.  I also decided to use Enzyme for my tests as I have also just learned the utility but hadn't actually written any of my own tests yet.  However, as I am new to Enzyme I decided early on that I wouldn't take a TDD approach with this task, my goal was to fully understand using Enzyme and testing in react and I would be very happy with full coverage and all tests mocked where necessary.
 
-Another focus of this project was to improve my css which I'm still very new to for a budding frontend developer, so for this purpose I decided just to concentrate on core css skills and just use basic css (although I did apply Bootstrap CDN https://getbootstrap.com/docs/3.3/getting-started/).
+Another focus of this project was to improve my css which I'm still very new to for a budding front end developer, so for this purpose I decided just to concentrate on core css skills and just use basic css (although I did apply Bootstrap CDN https://getbootstrap.com/docs/3.3/getting-started/).
 
 
 ## Run the app locally
@@ -57,7 +57,7 @@ I would like to see the cost of the capacity I click on.
 
 - I decided that the selection section would for the basis for the App as this is where the state is set and all the functionality is and this would form the parent component to the other 3 sections mentioned above.  The app would set an initial state of gold colour and 64GB capacity and on click of any of the other selections the state would change.
 
-- One of my main goals was for the code to be reusable and maintainable.  To achieve this I ensured all  information was taken from the data file, even where it didn't seem necessary just for the purpose of this task.  I also used constants for the setting the colour and capacity so that should these change it's easy for the developer to update these and the code and test will use the new data.  I also ensured all tests were mocked and where they find the selection boxes they find them by position rather than className should the colours/capacities change.
+- One of my main goals was for the code to be reusable and maintainable.  To achieve this I ensured all  information was taken from the data file, even where it didn't seem necessary just for the purpose of this task.  I also used constants for setting the colour and capacity so that should these change it's easy for the developer to update these and the code and test will use the new data.  I also ensured all tests were mocked and where they find the selection boxes they find them by position rather than className should the colours/capacities change.
 
 - I later extracted the star rating from the Summary component as this felt like it belonged on it's own.  If the phone rating is more than 4 it shows 5 gold stars, more than 3 it shows 4 gold stars and 1 grey star and so on.
 
@@ -67,7 +67,7 @@ I would like to see the cost of the capacity I click on.
 
 - As stated in my motivation my css skills are limited however I was very happy with how I got the project looking but I would need to look more into my design should the objectives of the task change (maybe more colours or capacities).
 
-- Using the require function to get the source for the picture caused me a few issues and I'm not entirely sure if this is seen as good code, however using this meant that my code was a lot simpler and easily readable.  I'm also not 100% sure why this causes the test result doesn't include the file path.
+- Using the require function to get the source for the picture caused me a few issues and I'm not entirely sure if this is seen as good code, however using this meant that my code was a lot simpler and easily readable.  I'm also not 100% sure why this the test result doesn't include the file path.
 
 ## Further Work
 
