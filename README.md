@@ -1,3 +1,5 @@
+[Introduction](#introduction) | [Task](#task) | [Motivation](#motivation) | [Installation](#installation) |  [Approach](#approach) | [Challenges](#challenges) | [Further Work](#further-Work)
+
 # Vodaphone Developer Task
 
 ## Introduction
@@ -16,7 +18,7 @@ Since completing the Makers Academy course I have turned my attention to front e
 Another focus of this project was to improve my css which I'm still very new to for a budding front end developer, so for this purpose I decided just to concentrate on core css skills and just use basic css (although I did apply [Bootstrap CDN](https://getbootstrap.com/docs/3.3/getting-started/)).
 
 
-## Run the app locally
+## Installation
 
 Clone the repository then in the command line run:
 
@@ -61,7 +63,7 @@ I would like to see the cost of the capacity I click on.
 
 - I later extracted the star rating from the Summary component as this felt like it belonged on it's own.  If the phone rating is more than 4 it shows 5 gold stars, more than 3 it shows 4 gold stars and 1 grey star and so on.
 
-## Challanges
+## Challenges
 
 - Testing in Enzyme and ensuring everything was mocked properly was probably my biggest challenge and took the largest chunk of my time.  However I eventually achieved 100% test coverage on all components with all tests mocked where necessary.
 
